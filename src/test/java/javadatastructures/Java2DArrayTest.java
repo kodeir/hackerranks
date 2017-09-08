@@ -20,4 +20,19 @@ public class Java2DArrayTest {
         assertEquals(biggestSum, java2DArray.findBiggestHourglass());
     }
 
+    @Test
+    public void findBiggestHourglassNegativeInt() throws Exception {
+        int array[][] = {
+                new int[]{-1,-1,-1,-1,-1,-1},
+                new int[]{-1,0,-1,-1,-1,-1},
+                new int[]{-1,-1,-1,-1,-1,-1},
+                new int[]{-1,-1,-1,-1,-1,-1},
+                new int[]{-1,-1,-1,-1,-100,-1},
+                new int[]{-1,-1,-1,-1,-1,-1}
+        };
+        int biggestSum = -6;
+        Java2DArray java2DArray = new Java2DArray(array);
+        assertEquals(biggestSum, java2DArray.findBiggestHourglass());
+    }
+
 }
