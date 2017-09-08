@@ -13,7 +13,7 @@ class Java2DArray {
     }
 
     int findBiggestHourglass(){
-        int biggestSum = 0;
+        int biggestSum = Integer.MIN_VALUE;
 
         for (int i=0; i<array.length-2; i++){
             for (int j=0; j<array[i].length-2;j++){
