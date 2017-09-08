@@ -4,15 +4,18 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class JavaBigDecimal {
+/**
+ * https://www.hackerrank.com/challenges/java-bigdecimal
+ */
+class JavaBigDecimal {
 
     private String strings[];
 
-    public JavaBigDecimal(String args[]){
+    JavaBigDecimal(String args[]){
         this.strings = args;
     }
 
-    public String[] doReverseSort(){
+    String[] doReverseSort(){
         System.out.println("Non-sorted string array: " + Arrays.toString(strings));
         // Collections.reverseOrder(new Comparator ...); could be used
         Arrays.sort(strings, new Comparator<String>(){
