@@ -4,7 +4,7 @@ package javadatastructures;
  * https://www.hackerrank.com/challenges/java-negative-subarray/problem
  */
 
-public class JavaSubArray {
+class JavaSubArray {
 
     int array[];
     int n;
