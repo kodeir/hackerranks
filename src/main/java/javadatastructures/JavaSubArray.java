@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 class JavaSubArray {
 
-    int array[];
-    int n;
+    private int array[];
+    private int n;
 
     JavaSubArray(int array[]){
         this.array = array;
@@ -18,38 +18,23 @@ class JavaSubArray {
     }
 
     int countNegativeSubArrays(){
-        int subArrsCount = 0;
-        int nCopy = n;
-
-        while (nCopy > 0){
-            subArrsCount = subArrsCount + nCopy;
-            nCopy--;
-        }
-
-        int subArrs[] = new int[subArrsCount];
-        nCopy = n;
-        int count = 0;
         int flag = 0;
+        int negativeSubArraysCount = 0;
 
-        while (nCopy > 0){
-            for (int i=0; i<nCopy;i++){
-                subArrs[count] = array[i];
+        while (n > 0){
+            for (int i=0; i<n;i++){
+                int subArraySum = array[i];
                 if (flag >0) {
                     for (int j = 0; j < flag; j++){
-                        subArrs[count] = subArrs[count] + array[j+i+1];
+                        subArraySum = subArraySum + array[j+i+1];
                     }
                 }
-                count++;
+                if (subArraySum < 0){
+                    negativeSubArraysCount++;
+                }
             }
             flag++;
-            nCopy--;
-        }
-
-        int negativeSubArraysCount = 0;
-        for (int i = 0; i < subArrsCount; i++){
-            if (subArrs[i] < 0){
-                negativeSubArraysCount++;
-            }
+            n--;
         }
 
         return negativeSubArraysCount;
