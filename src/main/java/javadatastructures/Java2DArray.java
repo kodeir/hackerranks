@@ -6,9 +6,9 @@ package javadatastructures;
  */
 class Java2DArray {
 
-    int array[];
+    int array[][];
 
-    Java2DArray(int array[]){
+    Java2DArray(int array[][]){
         this.array = array;
     }
 
