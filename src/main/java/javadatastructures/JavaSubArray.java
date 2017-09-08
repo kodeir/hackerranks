@@ -29,31 +29,29 @@ class JavaSubArray {
         int subArrs[] = new int[subArrsCount];
         nCopy = n;
         int count = 0;
-        int flag = -1;
+        int flag = 0;
 
         while (nCopy > 0){
-            System.out.print(nCopy + "; ");
             for (int i=0; i<nCopy;i++){
-                System.out.print("i = " + i + "; ");
                 subArrs[count] = array[i];
-                System.out.print("array[i] = " + array[i] + "; ");
-                System.out.print("flag = " + flag + "; ");
-                if (flag >=0) {
-                    for (int j = 0; j < flag+1; j++){
-                        System.out.print("j = " + j + "; ");
-                        subArrs[count] = subArrs[count] + array[j+1];
-                        System.out.print("array[j+1] = " + array[j+1] + "; ");
+                if (flag >0) {
+                    for (int j = 0; j < flag; j++){
+                        subArrs[count] = subArrs[count] + array[j+i+1];
                     }
                 }
                 count++;
             }
             flag++;
             nCopy--;
-            System.out.println();
         }
 
-        System.out.println(Arrays.toString(subArrs));
+        int negativeSubArraysCount = 0;
+        for (int i = 0; i < subArrsCount; i++){
+            if (subArrs[i] < 0){
+                negativeSubArraysCount++;
+            }
+        }
 
-        return 0;
+        return negativeSubArraysCount;
     }
 }
