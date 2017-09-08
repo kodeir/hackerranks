@@ -13,6 +13,7 @@ public class JavaBigDecimal {
     }
 
     public String[] doReverseSort(){
+        System.out.println("Non-sorted string array: " + Arrays.toString(strings));
         Arrays.sort(strings, new Comparator<String>(){
             public int compare(String s1, String s2){
                 BigDecimal a,b;
@@ -21,7 +22,7 @@ public class JavaBigDecimal {
                 return -a.compareTo(b);
             }
         });
-        System.out.println(Arrays.toString(strings));
+        System.out.println("Sorted (reversed order) string array: " + Arrays.toString(strings));
         return strings;
     }
 }
