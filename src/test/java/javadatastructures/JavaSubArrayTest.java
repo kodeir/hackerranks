@@ -14,10 +14,15 @@ public class JavaSubArrayTest {
     @Parameterized.Parameters
     public static Object[][] arrays() {
         return new Object[][]{
+                //  1
                 {new int[]{1}, 0},
+                // -1  0 -1
                 {new int[]{-1, 0}, 2},
+                // -1  2  0  1  2  1
                 {new int[]{-1, 2, 0}, 1},
+                // -5  1  7  0 -4  8  7  3  8  3
                 {new int[]{-5, 1, 7, 0}, 2},
+                //  2  0 -3  2 -5  2 -3 -1 -3 -1 -1 -6  1 -6 -4
                 {new int[]{2, 0, -3, 2, -5}, 10},
         };
     }
