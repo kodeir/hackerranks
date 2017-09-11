@@ -51,8 +51,16 @@ public class Java1DArrayPart2Test {
                         , new String[]{
                         "YES"
                 }},
+                {new int[][]{
+                        new int[]{66,3},
+                        new int[]{0,0,1,0,0,1,0,0,0,0,1,1,1,0,1,1,1,0,0,1,1,0,0,0,0,1,0,1,0,1,0,0,1,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,1,1,0,1,0,0,1,1,0,1,1,1,1,0,1,1,0}}
+                        , 1
+                        , new String[]{
+                        "YES"
+                }},
         };
-    }
+    }//66 3
+//0 0 1 0 0 1 0 0 0 0 1 1 1 0 1 1 1 0 0 1 1 0 0 0 0 1 0 1 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 1 1 0 1 1 0
 
     public Java1DArrayPart2Test(int array[][], int q, String[] result){
         this.array = array;

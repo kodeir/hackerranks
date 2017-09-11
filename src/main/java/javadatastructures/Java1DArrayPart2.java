@@ -14,6 +14,8 @@ class Java1DArrayPart2 {
     //number of queries
     private int q;
 
+    private int reversePoint;
+
     Java1DArrayPart2(int array[][], int q){
         this.array = array;
         this.q = q;
@@ -49,6 +51,7 @@ class Java1DArrayPart2 {
     }
 
     private boolean canWin(int leap, int[] game) {
+        reversePoint = -1;
         System.out.println();
         int i = 0;
         System.out.print("i = " + i);
@@ -71,11 +74,16 @@ class Java1DArrayPart2 {
         if (game[i+1] == 0){
             i++;
             return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
-        } else if (game[i+leap] == 0){
+        } else if (leap != 0 && game[i+leap] == 0){
             i = i + leap;
             return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
         } else {
-            return reversePlay(i, game, leap, n);
+            if (reversePoint<0) {
+                reversePoint = i;
+                return reversePlay(i, game, leap, n);
+            } else {
+                return false;
+            }
         }
     }
 
@@ -85,8 +93,10 @@ class Java1DArrayPart2 {
         System.out.print("i = " + i);
         if (i>0 && game[i-1] == 0){
             i--;
+            System.out.print("; i-- = " + i);
             if (game[i+leap] == 0) {
                 i = i + leap;
+                System.out.print("; i+leap = " + i);
                 return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
             } else {
                 return reversePlay(i, game, leap, n);
