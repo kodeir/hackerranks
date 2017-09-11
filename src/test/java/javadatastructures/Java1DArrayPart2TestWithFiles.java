@@ -26,10 +26,13 @@ public class Java1DArrayPart2TestWithFiles {
     @Parameterized.Parameters
     public static Object[][] arrays() {
         return new Object[][]{
+                {"input00.txt", "output00.txt"},
                 {"input01.txt", "output01.txt"},
                 {"input02.txt", "output02.txt"},
                 {"input03.txt", "output03.txt"},
                 {"input04.txt", "output04.txt"},
+                {"input05.txt", "output05.txt"},
+                {"input06.txt", "output06.txt"},
                 {"input07.txt", "output07.txt"},
                 {"input08.txt", "output08.txt"},
                 {"input09.txt", "output09.txt"},
