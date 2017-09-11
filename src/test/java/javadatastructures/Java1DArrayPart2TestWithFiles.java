@@ -19,8 +19,8 @@ public class Java1DArrayPart2TestWithFiles {
     private String output;
 
     public Java1DArrayPart2TestWithFiles(String input, String output){
-        this.input = "testfiles/"+input;
-        this.output = "testfiles/"+output;
+        this.input = "testfiles/Java1DArrayPart2files/"+input;
+        this.output = "testfiles/Java1DArrayPart2files/"+output;
     }
 
     @Parameterized.Parameters
