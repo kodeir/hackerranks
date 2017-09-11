@@ -20,6 +20,7 @@ class Java1DArrayPart2 {
     }
 
     String[] playGame(){
+        System.out.println("---- NEW GAME ----");
         int arrayI = 0;
         int arrayJ = 0;
         String result[] = new String[q];

@@ -31,6 +31,19 @@ public class Java1DArrayPart2Test {
                 "NO",
                 "NO"
         }},
+                {new int[][]{
+                        new int[]{6,2},
+                        new int[]{0,1,0,1,0,1},
+                        new int[]{10,6},
+                        new int[]{0,0,1,1,0,0,1,1,0,0},
+                        new int[]{10,3},
+                        new int[]{0,0,1,1,0,0,1,1,0,0}}
+                        , 3
+                        , new String[]{
+                        "YES",
+                        "NO",
+                        "YES"
+                }},
         };
     }
 
