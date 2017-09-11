@@ -62,8 +62,8 @@ class Java1DArrayPart2 {
         System.out.print("i = " + i);
         System.out.print("; leap = " + leap);
         System.out.print("; n = " + n);
-        System.out.print("; game[i] == game[n-1] = " + (i == n-1));
-        System.out.print("; (game[i]+leap)>n = " + ((i+leap)>=n));
+        System.out.print("; i == n-1 = " + (i == n-1));
+        System.out.print("; (i+leap)>n = " + ((i+leap)>=n));
         return (i == n-1) || ((i+leap)>=n);
     }
 
@@ -75,7 +75,26 @@ class Java1DArrayPart2 {
             i = i + leap;
             return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
         } else {
+            return reversePlay(i, game, leap, n);
+        }
+    }
+
+    private boolean reversePlay(int i, int game[], int leap, int n){
+        System.out.println();
+        System.out.println("-reverse-");
+        System.out.print("i = " + i);
+        if (i>0 && game[i-1] == 0){
+            i--;
+            if (game[i+leap] == 0) {
+                i = i + leap;
+                return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
+            } else {
+                return reversePlay(i, game, leap, n);
+            }
+        } else {
             return false;
         }
     }
+
+
 }
