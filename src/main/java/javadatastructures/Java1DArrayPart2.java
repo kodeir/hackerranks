@@ -14,7 +14,7 @@ class Java1DArrayPart2 {
         this.q = q;
     }
 
-    String playGame(){
-        return "";
+    String[] playGame(){
+        return new String[]{};
     }
 }

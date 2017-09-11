@@ -25,7 +25,7 @@ public class Java1DArrayPart2Test {
                 "NO"
         };
         Java1DArrayPart2 java1DArrayPart2 = new Java1DArrayPart2(array, q);
-        java1DArrayPart2.playGame();
+        assertEquals(result,java1DArrayPart2.playGame());
     }
 
 }
