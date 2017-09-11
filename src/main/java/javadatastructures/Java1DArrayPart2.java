@@ -54,26 +54,26 @@ class Java1DArrayPart2 {
         System.out.print("i = " + i);
         int n = game.length;
         System.out.print("; n = " + n);
-        return (checkWinCondition(i, game, leap, n)) || keepPlaying(i, game, leap, n);
+        return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
     }
 
-    private boolean checkWinCondition(int i, int game[], int leap, int n){
+    private boolean checkWinCondition(int i, int leap, int n){
         System.out.println();
         System.out.print("i = " + i);
         System.out.print("; leap = " + leap);
         System.out.print("; n = " + n);
-        System.out.print("; game[i] == game[n-1] = " + (game[i] == game[n-1]));
-        System.out.print("; (game[i]+leap)>n = " + ((game[i]+leap)>n));
-        return (i == n-1) || ((i+leap)>n);
+        System.out.print("; game[i] == game[n-1] = " + (i == n-1));
+        System.out.print("; (game[i]+leap)>n = " + ((i+leap)>=n));
+        return (i == n-1) || ((i+leap)>=n);
     }
 
     private boolean keepPlaying(int i, int game[], int leap, int n){
         if (game[i+1] == 0){
             i++;
-            return (checkWinCondition(i, game, leap, n)) || keepPlaying(i, game, leap, n);
+            return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
         } else if (game[i+leap] == 0){
             i = i + leap;
-            return (checkWinCondition(i, game, leap, n)) || keepPlaying(i, game, leap, n);
+            return (checkWinCondition(i, leap, n)) || keepPlaying(i, game, leap, n);
         } else {
             return false;
         }
