@@ -24,8 +24,8 @@ public class Java1DArrayPart2Test {
                 "NO",
                 "NO"
         };
-        Java1DArrayPart2Test java1DArrayPart2Test = new Java1DArrayPart2Test(array, 4);
-        java1DArrayPart2Test.playGame();
+        Java1DArrayPart2 java1DArrayPart2 = new Java1DArrayPart2(array, q);
+        java1DArrayPart2.playGame();
     }
 
 }
